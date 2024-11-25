@@ -9,7 +9,7 @@ function App() {
   return (
     <>
      <NavBar user={user} />
-     <h1>Oi</h1>
+     <h1>Vital Track</h1>
     </>
   )
 }
