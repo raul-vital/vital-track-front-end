@@ -18,7 +18,7 @@ function App() {
       ) : (
         <Route path="/" element={<Landing />} />
       )}
-      <Route path='signup' element={<SignupForm />} />
+      <Route path='/signup' element={<SignupForm  setUser={setUser}/>} />
      </Routes>
      
     </>
