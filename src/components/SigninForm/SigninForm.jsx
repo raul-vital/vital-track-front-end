@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import * as authService from '../../services/authService'
 
 
 const SigninForm = (props) =>{
     const navigate = useNavigate()
     const[formData, setFormData] = useState({
-        email: '',
         username:'',
         password:'',
     })
@@ -19,10 +19,15 @@ const SigninForm = (props) =>{
         handleMessage('')
         setFormData({...formData, [event.target.name]: event.target.value})    
     }
-    const handleSubmit = (event) =>{
+    const handleSubmit = async (event) =>{
         event.preventDefault()
-        props.setUser('')
-        navigate('/')
+        try{
+            const user = await authService.signin(formData)
+            props.setUser(user)
+            navigate('/')
+        }catch(err) {
+            handleMessage(err.message)
+        }
     }
     
 
@@ -31,17 +36,6 @@ const SigninForm = (props) =>{
         <h1>Sign In</h1>
         <p>{message}</p>
         <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input 
-                  type="email"
-                  id="email"
-                  value={formData.email}
-                  name="email"
-                  onChange={handleChange}
-
-                />
-            </div>
             <div>
                 <label htmlFor="username">Username:</label>
                 <input 
