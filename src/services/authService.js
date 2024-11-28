@@ -10,6 +10,9 @@ const signup = async (formData) => {
         if(json.err){
             throw new Error(json.err)
         }
+        if(json.token){
+            localStorage.setItem('token', json.token)
+        }
         return json
     }catch(err){
         console.log(err)
@@ -29,6 +32,7 @@ const signin = async(user) =>{
             throw new Error(json.error)
         }
         if(json.token){
+            localStorage.setItem('token',json.token)
             const user = JSON.parse(atob(json.token.split('.')[1]))
             return user
         }
@@ -38,8 +42,23 @@ const signin = async(user) =>{
     }
 }
 
+const signout = () =>{
+    localStorage.removeItem('token')
+}
+
+const getUser = () =>{
+    const token = localStorage.getItem('token')
+    if(!token){
+        return null
+    }
+    const user = JSON.parse(atob(token.split('.')[1]))
+    return user
+}
+
 
 export{
     signup,
     signin,
+    getUser,
+    signout
 }
