@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route} from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
@@ -8,9 +8,20 @@ import SignupForm from './components/SignupForm/SignupForm'
 import SigninForm from './components/SigninForm/SigninForm'
 import WorkoutList from './components/WorkoutList/WorkoutList'
 import * as authService from './services/authService'
+import * as workoutService from './services/workoutService'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [workouts, setWorkouts] = useState([])
+
+    //Fetch
+    useEffect(() => {
+       const fetchWorkouts = async () => {
+        const workouts = await workoutService.indexRoute()
+        setWorkouts(workouts)
+       }
+       if(user) fetchWorkouts()
+    },[user])
 
   const handleSignout = () =>{
     authService.signout()
@@ -24,7 +35,7 @@ function App() {
       {user ? (
         <>
         <Route path="/" element={<Dashboard user={user}/>} />
-        <Route path="/workouts" element={<WorkoutList />} />
+        <Route path="/workouts" element={<WorkoutList workouts={workouts}/>} />
         </>
       ) : (
         <Route path="/" element={<Landing />} />
