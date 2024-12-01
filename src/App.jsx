@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard/Dashboard'
 import SignupForm from './components/SignupForm/SignupForm'
 import SigninForm from './components/SigninForm/SigninForm'
 import WorkoutList from './components/WorkoutList/WorkoutList'
+import WorkoutDetails from './components/WorkoutDetails/WorkoutDetails'
 import * as authService from './services/authService'
 import * as workoutService from './services/workoutService'
 
@@ -36,6 +37,7 @@ function App() {
         <>
         <Route path="/" element={<Dashboard user={user}/>} />
         <Route path="/workouts" element={<WorkoutList workouts={workouts}/>} />
+        <Route path="/workouts/:workoutId" element={<WorkoutDetails />} />
         </>
       ) : (
         <Route path="/" element={<Landing />} />
