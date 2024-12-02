@@ -3,6 +3,7 @@ const WorkoutList = (props) =>{
     return(
         <main>
             <div>
+            {!props.workouts.length && <h3>No Workout Saved!</h3>}
             {props.workouts.map((workout) => (
                <Link key={workout._id} to={`/workouts/${workout._id}`}>
                  <header>

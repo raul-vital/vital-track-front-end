@@ -15,7 +15,6 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [workouts, setWorkouts] = useState([])
 
-    //Fetch
     useEffect(() => {
        const fetchWorkouts = async () => {
         const workouts = await workoutService.indexRoute()
