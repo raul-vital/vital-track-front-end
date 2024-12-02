@@ -31,7 +31,8 @@ function App() {
   }
 
   const handleNewWorkout = async (workoutFormData) => {
-    console.log('workoutFormData', workoutFormData)
+    const newWorkout = await workoutService.createRoute(workoutFormData)
+    setWorkouts([newWorkout, ...workouts])
     navigate('/workouts')
   }
 
