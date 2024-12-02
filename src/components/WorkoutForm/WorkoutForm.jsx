@@ -9,16 +9,25 @@ const WorkoutForm = (props) => {
 
     })
 
+    const handleChange = (event) =>{
+        setFormData({...formData, [event.target.name]: event.target.value})
+
+    }
+
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+        props.handleNewWorkout(formData)
+    }
     return(
         <main>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <label htmlFor='category'>Category:</label>
                 <select 
                   required
                   name="category"
                   id="category"
                   value={formData.category}
-                  onChange=''
+                  onChange={handleChange}
                 >
                 <option value="Strength Training">Strength Training</option>
                 <option value="Aerobics">Aerobics</option>
@@ -33,7 +42,7 @@ const WorkoutForm = (props) => {
                   name="title"
                   id="title"
                   value={formData.title}
-                  onChange=''  
+                  onChange={handleChange}  
                 />  
 
                 <label htmlFor='sets'>Sets:</label>  
@@ -43,7 +52,7 @@ const WorkoutForm = (props) => {
                    name="sets"
                    id="sets"
                    value={formData.sets}
-                   onChange=''
+                   onChange={handleChange}
               />
 
               <label htmlFor='reps'>Reps:</label>
@@ -53,18 +62,19 @@ const WorkoutForm = (props) => {
                  name="reps"
                  id="reps"
                  value={formData.reps}
-                 onChange=''
+                 onChange={handleChange}
              />
              
              <label htmlFor='weight'>Weights: </label>
              <input 
+               placeholder='Lbs'
                type="number"
                name="weight"
                id="weight"
                value={formData.weight}
-               onChange=''
+               onChange={handleChange}
             />
-            <button>Submit</button>
+            <button type='submit'>Submit</button>
 
             </form>
         </main>
