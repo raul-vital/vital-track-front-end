@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import { Routes, Route, useNavigate} from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar/NavBar'
@@ -11,6 +11,7 @@ import WorkoutDetails from './components/WorkoutDetails/WorkoutDetails'
 import WorkoutForm from './components/WorkoutForm/WorkoutForm'
 import * as authService from './services/authService'
 import * as workoutService from './services/workoutService'
+export const AuthedUserContext = createContext(null)
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
@@ -41,6 +42,12 @@ function App() {
       setWorkouts(workouts.map((workout) => (workoutId === workout._id ? updatedWorkout : workout)))
       navigate(`/workouts/${workoutId}`)
   }
+
+  const handleRemoveWorkout = async (workoutId) =>{
+    const deletedWorkout = await workoutService.deleteRoute(workoutId)
+     setWorkouts(workouts.filter((workout)=> workout._id !== deletedWorkout._id))
+     navigate('/workouts')
+  }
   return (
     <>
      <NavBar  handleSignout={handleSignout} user={user} />
@@ -49,7 +56,7 @@ function App() {
         <>
         <Route path="/" element={<Dashboard user={user}/>} />
         <Route path="/workouts" element={<WorkoutList workouts={workouts}/>} />
-        <Route path="/workouts/:workoutId" element={<WorkoutDetails />} />
+        <Route path="/workouts/:workoutId" element={<WorkoutDetails  handleRemoveWorkout={handleRemoveWorkout}/>} />
         <Route path="/workouts/new" element = {<WorkoutForm handleNewWorkout={handleNewWorkout} />} />
         <Route path="/workouts/:workoutId/edit" element={< WorkoutForm handleUpdateWorkout={handleUpdateWorkout} />} />
         </>

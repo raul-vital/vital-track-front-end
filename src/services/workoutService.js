@@ -55,10 +55,23 @@ const updateRoute = async (workoutId, workoutFormData) => {
         }
     }
 
-
+const deleteRoute = async (workoutId) => {
+    try{
+        const res = await fetch(`${BASE_URL}/${workoutId}`, {
+            method: 'DELETE',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+        })
+        return res.json()
+    }catch(err){
+        console.log(err)
+    }
+}
 export{
     indexRoute,
     showRoute,
     createRoute,
     updateRoute,
+    deleteRoute,
 }

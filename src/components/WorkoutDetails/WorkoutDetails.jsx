@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { AuthedUserContext } from '../../App'
+import { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from "react-router-dom"
 import * as workoutService from '../../services/workoutService'
 
@@ -6,6 +7,7 @@ import * as workoutService from '../../services/workoutService'
 const WorkoutDetails = (props) => {
     const {workoutId} = useParams()
     const [workout ,setWorkout] = useState(null)
+    const user = useContext(AuthedUserContext)
 
     useEffect(() => {
         const fetchWorkout = async () =>{
@@ -27,9 +29,12 @@ const WorkoutDetails = (props) => {
             <p>Reps: {workout.reps}</p>
             <p>Weights: {workout.weight} {!workout.weight ? "No Weights Used." : "lb/s"}</p>
             <p>progress: {workout.progress.weightsLifted}</p>
+        {workout.user._id && (
             <>
             <button><Link to={`/workouts/${workoutId}/edit`}>Edit Workout</Link></button>
+            <button onClick={()=> props.handleRemoveWorkout(workoutId)}>Delete</button>
             </>
+        )}
         </header>
         </div>
 
