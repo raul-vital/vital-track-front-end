@@ -36,6 +36,9 @@ function App() {
     navigate('/workouts')
   }
 
+  const handleUpdateWorkout = async (workoutId, workoutFormData) => {
+      navigate(`/workouts/${workoutId}`)
+  }
   return (
     <>
      <NavBar  handleSignout={handleSignout} user={user} />
@@ -46,6 +49,7 @@ function App() {
         <Route path="/workouts" element={<WorkoutList workouts={workouts}/>} />
         <Route path="/workouts/:workoutId" element={<WorkoutDetails />} />
         <Route path="/workouts/new" element = {<WorkoutForm handleNewWorkout={handleNewWorkout} />} />
+        <Route path="/workouts/:workoutId/edit" element={< WorkoutForm handleUpdateWorkout={handleUpdateWorkout} />} />
         </>
       ) : (
         <Route path="/" element={<Landing />} />

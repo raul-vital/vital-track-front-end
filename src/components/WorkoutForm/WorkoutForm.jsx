@@ -1,4 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import * as workoutService from '../../services/workoutService'
+
 const WorkoutForm = (props) => {
     const [formData, setFormData] = useState({
         category: 'Strength Training',
@@ -8,6 +11,18 @@ const WorkoutForm = (props) => {
         weight: '',
 
     })
+     const {workoutId} = useParams()
+
+
+    useEffect(()=> {
+        const fetchWorkout = async () =>{
+            const workoutData = await workoutService.showRoute(workoutId)
+            setFormData(workoutData)
+        }
+        if(workoutId) fetchWorkout()
+    },[workoutId])
+
+
 
     const handleChange = (event) =>{
         setFormData({...formData, [event.target.name]: event.target.value})
@@ -16,8 +31,15 @@ const WorkoutForm = (props) => {
 
     const handleSubmit = (event) =>{
         event.preventDefault()
-        props.handleNewWorkout(formData)
+        if(workoutId){
+           props.handleUpdateWorkout(workoutId, formData)
+
+        }else{
+            props.handleNewWorkout(formData)
+            
+        }
     }
+
     return(
         <main>
             <form onSubmit={handleSubmit}>
@@ -74,6 +96,7 @@ const WorkoutForm = (props) => {
                value={formData.weight}
                onChange={handleChange}
             />
+            <h1>{workoutId ? 'Edit Workout' : 'Add New Workout'}</h1>
             <button type='submit'>Submit</button>
 
             </form>

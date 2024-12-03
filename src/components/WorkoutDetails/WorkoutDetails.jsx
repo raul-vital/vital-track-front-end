@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import * as workoutService from '../../services/workoutService'
 
 
@@ -26,7 +26,10 @@ const WorkoutDetails = (props) => {
             <p>Sets: {workout.sets}</p>
             <p>Reps: {workout.reps}</p>
             <p>Weights: {workout.weight} {!workout.weight ? "No Weights Used." : "lb/s"}</p>
-            <p> progress: {workout.progress.weightsLifted}</p>
+            <p>progress: {workout.progress.weightsLifted}</p>
+            <>
+            <button><Link to={`/workouts/${workoutId}/edit`}>Edit Workout</Link></button>
+            </>
         </header>
         </div>
 
