@@ -37,6 +37,8 @@ function App() {
   }
 
   const handleUpdateWorkout = async (workoutId, workoutFormData) => {
+      const updatedWorkout = await workoutService.updateRoute(workoutId, workoutFormData)
+      setWorkouts(workouts.map((workout) => (workoutId === workout._id ? updatedWorkout : workout)))
       navigate(`/workouts/${workoutId}`)
   }
   return (

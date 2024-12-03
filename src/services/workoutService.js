@@ -38,8 +38,27 @@ const createRoute = async (workoutFormData) => {
     }
 }
 
+const updateRoute = async (workoutId, workoutFormData) => {
+    try{
+        const res = await fetch(`${BASE_URL}/${workoutId}`,{
+            method: 'PUT',
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(workoutFormData)
+        })
+         return res.json()
+
+    }catch(err){
+        console.log(err)
+        }
+    }
+
+
 export{
     indexRoute,
     showRoute,
     createRoute,
+    updateRoute,
 }
