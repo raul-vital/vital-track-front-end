@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import * as workoutService from '../../services/workoutService'
 
-const ProgressForm = (props) => {
+const ProgressForm = ({ workout, handleAddProgress}) => {
     const [formData, setFormData] = useState({
         date: '',
         weightsLifted:'',
@@ -14,7 +14,7 @@ const ProgressForm = (props) => {
     
     const handleSubmit = (event) => {
         event.preventDefault()
-        props.handleAddProgress(formData)
+        handleAddProgress(formData)
         setFormData({
             date: '',
             weightsLifted: '',
@@ -24,6 +24,23 @@ const ProgressForm = (props) => {
 
     return(
         <>
+        <section>
+        <div>
+            {console.log(workout.progress)}
+             {!workout.progress.length && <p>There isn't any progress saved.</p>}
+            {workout.progress.map((progressData)=> (
+                <div key={progressData._id}>
+                    <p>Date: {progressData.date}</p>
+                    <p>Weights Lifted: {progressData.weightsLifted}</p>
+                    <p>Notes: {progressData.notes || 'No notes provided.'}</p>
+                </div>
+            ))}
+
+            </div>
+        
+        </section>
+        <section>
+         <div>
         <form onSubmit={handleSubmit}>
         
         <label htmlFor='date'> Date: </label>
@@ -54,9 +71,11 @@ const ProgressForm = (props) => {
         />
         <button type="submit">Submit</button>
         </form>
-        
+        </div>
+        </section>
         </>
     )
+
 }
 
 export default ProgressForm

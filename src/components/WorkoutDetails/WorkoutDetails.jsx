@@ -34,7 +34,7 @@ const WorkoutDetails = (props) => {
             <p>{workout.category}</p>
             <p>Sets: {workout.sets}</p>
             <p>Reps: {workout.reps}</p>
-            <p>Weights: {workout.weight} {!workout.weight ? "No Weights Used." : "lb/s"}</p>
+            <p>Weights: {workout.weight} {!workout.weight ? "No Weights Used." : "lb(s)"}</p>
         {workout.user._id && (
             <>
             <button><Link to={`/workouts/${workoutId}/edit`}>Edit Workout</Link></button>
@@ -47,22 +47,14 @@ const WorkoutDetails = (props) => {
         <div>
         <section>
             
-            <h3> Add Progress</h3>
+            <h3> {workout.title} - Progress</h3>
             <div>
-                {isVisible && <ProgressForm handleAddProgress={handleAddProgress}/>}
+                {isVisible && <ProgressForm handleAddProgress={handleAddProgress} workout={workout}/>}
                 <button onClick={()=>setIsVisible(!isVisible)}>
                     Show Or Hide
                 </button>
              </div>
 
-
-
-            {/* {!workout.progress.length && <p>There isn't any progress saved.</p>}
-            {workout.progress.map((progressData)=> {
-                <p key={progressData._id}> {workout.progressData} </p>
-            
-            })}
-            {console.log(workout.progress)} */}
           </section>
         </div>
     </main>
