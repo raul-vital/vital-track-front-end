@@ -53,7 +53,7 @@ const WorkoutForm = (props) => {
                 >
                 <option value="Strength Training">Strength Training</option>
                 <option value="Aerobics">Aerobics</option>
-                <option value="Strength Training"> Stretching</option>
+                <option value="Stretching"> Stretching</option>
                 <option value="Calisthenics">Calisthenics</option>
                 </select>
 

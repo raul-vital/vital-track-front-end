@@ -68,10 +68,30 @@ const deleteRoute = async (workoutId) => {
         console.log(err)
     }
 }
+
+
+const createProgress = async (workoutId, progressFormData) => {
+    try{
+        const res = await fetch(`${BASE_URL}/${workoutId}/progress`,{
+            method: 'POST',
+            headers:{
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json '
+            },
+            body: JSON.stringify(progressFormData)
+        })
+        return res.json()   
+
+    }catch(err){
+        console.log(err)
+    }
+}
+
 export{
     indexRoute,
     showRoute,
     createRoute,
     updateRoute,
     deleteRoute,
+    createProgress
 }

@@ -1,12 +1,14 @@
 import { AuthedUserContext } from '../../App'
 import { useState, useEffect, useContext } from 'react'
 import { useParams, Link } from "react-router-dom"
+import ProgressForm from '../ProgressForm/ProgressForm'
 import * as workoutService from '../../services/workoutService'
 
 
 const WorkoutDetails = (props) => {
     const {workoutId} = useParams()
     const [workout ,setWorkout] = useState(null)
+    const [isVisible, setIsVisible] = useState(false)
     const user = useContext(AuthedUserContext)
 
     useEffect(() => {
@@ -16,6 +18,11 @@ const WorkoutDetails = (props) => {
         }
         fetchWorkout()
     },[workoutId])
+
+    const handleAddProgress = async (progressFormData) =>{
+     const newProgress = await workoutService.createProgress(workoutId, progressFormData)
+      setWorkout({...workout, progress:[...workout.progress, newProgress]})
+    }
 
    if(!workout) return <main>Loading...</main>
 
@@ -28,7 +35,6 @@ const WorkoutDetails = (props) => {
             <p>Sets: {workout.sets}</p>
             <p>Reps: {workout.reps}</p>
             <p>Weights: {workout.weight} {!workout.weight ? "No Weights Used." : "lb/s"}</p>
-            <p>progress: {workout.progress.weightsLifted}</p>
         {workout.user._id && (
             <>
             <button><Link to={`/workouts/${workoutId}/edit`}>Edit Workout</Link></button>
@@ -40,12 +46,23 @@ const WorkoutDetails = (props) => {
 
         <div>
         <section>
-            {!workout.progress.length && <p>There isn't any progress saved.</p>}
+            
+            <h3> Add Progress</h3>
+            <div>
+                {isVisible && <ProgressForm handleAddProgress={handleAddProgress}/>}
+                <button onClick={()=>setIsVisible(!isVisible)}>
+                    Show Or Hide
+                </button>
+             </div>
+
+
+
+            {/* {!workout.progress.length && <p>There isn't any progress saved.</p>}
             {workout.progress.map((progressData)=> {
                 <p key={progressData._id}> {workout.progressData} </p>
             
             })}
-            {console.log(workout.progress)}
+            {console.log(workout.progress)} */}
           </section>
         </div>
     </main>
