@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
+import styles from './SignupForm.module.css'
 
 const SignupForm = (props) => {
 
@@ -41,8 +42,8 @@ const invalidForm = () =>{
 
 
     return(
-      <main>
-        <h1>Sign Up</h1>
+      <main className={styles.container}>
+        <h1 className={styles.text}>Sign Up</h1>
         <p>{message}</p>
         <form onSubmit={handleSubmit}> 
             <div>
@@ -86,9 +87,9 @@ const invalidForm = () =>{
                 />
             </div>
             <div>
-                <button disabled={invalidForm()}> Sign Up</button>
+                <button  className={styles.signupBtn} disabled={invalidForm()}> Sign Up</button>
                 <Link to ="/">
-                <button> Cancel </button>
+                <button className={styles.cancelBtn}> Cancel </button>
                 </Link>
             </div>
         </form>

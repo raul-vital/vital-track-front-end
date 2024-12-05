@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import * as workoutService from '../../services/workoutService'
+import styles from './WorkoutForm.module.css'
 
 const WorkoutForm = (props) => {
     const [formData, setFormData] = useState({
@@ -41,9 +42,10 @@ const WorkoutForm = (props) => {
     }
 
     return(
-        <main>
+        <main className={styles.container}>
+            <h1 className={styles.text}>{workoutId ? 'Edit Workout' : 'Add Workout'}</h1>
             <form onSubmit={handleSubmit}>
-               <h1>{workoutId ? 'Edit Workout' : 'New Workout'}</h1>
+               
                 <label htmlFor='category'>Category:</label>
                 <select 
                   required

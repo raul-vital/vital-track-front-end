@@ -37,7 +37,7 @@ form{
   padding: 60px;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
   border-radius: 10px;
-  background: #393f4d;
+  background: #0C2340;
 }
 input{
   padding:10px 12px;
@@ -56,7 +56,6 @@ div{
 button{
   margin-top: 30px;
   border-radius:36px;
-  background-color: grey;
   border:0;
   text-transform: uppercase;
   font-weight: 700;
