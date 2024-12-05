@@ -1,0 +1,44 @@
+a{    color: #fcffcd;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar a:hover{
+    color: hotpink;
+}
+.navbar {
+    top: 0; 
+    width: 100%;
+    height: 100px;
+    display: flex;
+    padding: 14px 21px;
+    align-items: center;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    
+  }
+
+  .navbar ul {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    list-style:none;
+    font-weight: bold;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .navbar li {
+    margin-left: 35px;
+    text-align: right;
+    color: #fcffcd;
+  }
+  
+  @media only screen and (max-width: 414px) {
+    .navbarul {
+      padding-left: 0px;
+    }
+    .navbar li {
+      font-size: 15px;
+    }
+  }
+  

@@ -1,0 +1,21 @@
+.main{
+    background-color: whitesmoke;
+}
+.dashboard h1{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15rem;
+    color:#fcffcd;
+}
+
+.dashboard h2{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1px;
+    display: flex;
+    align-content: space-around; 
+    
+}
+.dashboard p{
+    font-size: 2.5rem;
+    margin: -20px;
+}

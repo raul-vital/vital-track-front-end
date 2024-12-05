@@ -43,6 +43,7 @@ const WorkoutForm = (props) => {
     return(
         <main>
             <form onSubmit={handleSubmit}>
+               <h1>{workoutId ? 'Edit Workout' : 'New Workout'}</h1>
                 <label htmlFor='category'>Category:</label>
                 <select 
                   required
@@ -96,7 +97,6 @@ const WorkoutForm = (props) => {
                value={formData.weight}
                onChange={handleChange}
             />
-            <h1>{workoutId ? 'Edit Workout' : 'Add New Workout'}</h1>
             <button type='submit'>Submit</button>
 
             </form>
