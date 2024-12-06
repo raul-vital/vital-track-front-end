@@ -19,3 +19,24 @@
     justify-content: center;
 }
     
+@media only screen and  (max-width: 480px) { 
+    .landing h1 {
+        font-size: 4.7rem; 
+        text-align: center; 
+    }
+
+    .landing h3 {
+        font-size: 1rem; 
+        text-align: center; 
+    }
+
+    .landing p {
+        font-size: 1.5rem; 
+        margin: 0;
+        text-align: center; 
+    }
+    .main {
+        padding: 10px;
+    }
+
+} 
