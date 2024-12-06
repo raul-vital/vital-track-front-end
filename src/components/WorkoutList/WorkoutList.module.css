@@ -14,7 +14,7 @@
 }
 
 .cardLi{
-    width: 370px;
+    width: 400px;
     display: inline-block;
     border-radius: 232px;
     background: #F4BB44;
@@ -28,7 +28,7 @@
 .container p{
     font-size: 20px;
     color: black;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .container h2{
     font-size: 16px;

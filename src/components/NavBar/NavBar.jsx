@@ -16,8 +16,8 @@ const NavBar = ({user, handleSignout}) =>{
         ) : (
             <nav className={styles.navbar}>
                 <ul>
-                  <li><Link to="/signin"> Sign In </Link></li>
-                  <li><Link to="/signup"> Sign Up </Link></li>
+                  <li><Link to="/signin"> <button>Sign In</button> </Link></li>
+                  <li><Link to="/signup"> <button>Sign Up</button> </Link></li>
                 </ul>
 
             </nav>
