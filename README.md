@@ -1,8 +1,45 @@
-# React + Vite
+# Vital Track
+![Vital Track Homepage](https://i.imgur.com/VUti8c8.png)
+![Vital Track Workouts](https://i.imgur.com/iywuyUd.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Vital Track - A Workout Manager
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Getting Started 
+* [Vital Track - A Workout Manager](https://vitaltrack.netlify.app/)
+* [Planning Materials](https://trello.com/b/HQf7JyMi/vital-track)
+
+### Attributions
+* [React](https://react.dev/)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [React Router Dom](https://www.npmjs.com/package/react-router-dom)
+* [Express](https://www.npmjs.com/package/express)
+* [Mongoose](https://www.npmjs.com/package/mongoose)
+* [Cors](https://www.npmjs.com/package/cors)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Bcrypt](https://www.npmjs.com/package/bcrypt)
+* [Dumbbells](https://www.pngegg.com/en/png-zhbmf)
+* [Background .SVG](https://app.haikei.app/)
+* [Dumbells Favicon PNG](https://favicon.io/emoji-favicons/pie/)
+* [Reshot - Fitness Addiction](https://www.reshot.com/preview-assets/icons/X8C6QH4KPA/fitness-addiction-X8C6QH4KPA.svg)
+
+### Technologies Used
+* JavaScript
+* React
+* CSS
+* Node.js
+* Express
+* MongoDB
+
+
+### Next Steps
+
+* Implementing images upload functionality so that they can be displayed alongside the workouts in the progress area.
+
+* Implementing deleting and updating progress with a better planned out body weight section.
+
+* Adding a search bar that allows users to search through their workouts by title or date.
+
+* Implementing public sharing where users can share and see other users' workouts. 
+
+* Implementing graphs or charts so that users can see improvements over time.

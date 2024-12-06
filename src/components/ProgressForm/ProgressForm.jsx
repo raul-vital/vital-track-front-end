@@ -33,7 +33,7 @@ const ProgressForm = ({ workout, handleAddProgress}) => {
                 <div className={styles.cardLi} key={progressData._id}>
                     <h3>Date:</h3>
                     <p>{progressData.date}</p>
-                    <h3>Weights Lifted:</h3>
+                    <h3>Weight:</h3>
                     <p>{progressData.weightsLifted} Lb(s).</p>
                     <h3>Notes:</h3>
                     <p>{progressData.notes || 'No notes provided.'}</p>
@@ -58,7 +58,7 @@ const ProgressForm = ({ workout, handleAddProgress}) => {
           value={formData.date}
           onChange={handleChange}
         />
-         <label htmlFor='weights-lifted'> Weights Lifted: </label>
+         <label htmlFor='weights-lifted'> Weight: </label>
         <input
           type="number"
           name="weightsLifted"
