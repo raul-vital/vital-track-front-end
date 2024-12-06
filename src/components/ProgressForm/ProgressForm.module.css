@@ -1,6 +1,5 @@
 .container{ 
     font-size: large;
-    color:#FFBF00
 }
 .cardDiv{
     display: grid;
@@ -12,7 +11,7 @@
 }
 
 .cardLi{
-
+    color: black;
     display: inline-block;
     border-radius: 20px;
     background: #FFBF00;
@@ -31,16 +30,16 @@
 }
 
 .container p{
-    color: black;
-    font-style: italic;
+    font-style: bold;
     font-size: 10px;
     display: flex;
-    align-items: end;
+    align-items:center;
 }
-.noProgress p{
+.noProgress{
+   width: 100px;
     display: flex;
     font-size: 10px;
-    color:#FFBF00;
+    color:#fcffcd;
 }
 .container h1{
     font-size: 25px;

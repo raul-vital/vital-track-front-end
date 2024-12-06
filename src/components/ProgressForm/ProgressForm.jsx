@@ -28,7 +28,7 @@ const ProgressForm = ({ workout, handleAddProgress}) => {
         <main className={styles.container}>
         <section>
         <div className={styles.cardDiv}>
-             {!workout.progress.length && <p className={styles.noProgress}>There isn't any progress saved.</p>}
+             {!workout.progress.length && <p className={styles.noProgress}>No saved progress.</p>}
             {workout.progress.map((progressData)=> (
                 <div className={styles.cardLi} key={progressData._id}>
                     <h3>Date:</h3>

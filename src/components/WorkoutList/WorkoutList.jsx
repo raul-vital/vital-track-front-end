@@ -4,7 +4,8 @@ const WorkoutList = (props) =>{
     return(
         <main className={styles.container}>
             <div className={styles.cardDiv}>
-            {!props.workouts.length && <h1>No Workout Saved!</h1>}
+            {!props.workouts.length && <h1 className={styles.noWorkout}>No saved workouts.<button className={styles.addNewBtn}><Link className={styles.link}to="/workouts/new">Add New Workout</Link></button></h1>} 
+            
             {props.workouts.map((workout) => (
                <Link key={workout._id} to={`/workouts/${workout._id}`}>
                  <div className={styles.cardLi}>

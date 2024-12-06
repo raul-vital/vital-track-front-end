@@ -3,7 +3,7 @@
 }
 .dashboard h1{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 15rem;
+    font-size: 9rem;
     color:#fcffcd;
 }
 
@@ -16,6 +16,34 @@
     
 }
 .dashboard p{
+    font-style: italic;
     font-size: 2.5rem;
     margin: -20px;
 }
+.dashboard img{
+    width: 30%;
+    opacity: 85%;
+    justify-content: center;
+}
+
+@media only screen and  (max-width: 480px) { 
+    .dashboard h1 {
+        font-size: 9rem; 
+        text-align: center; 
+    }
+
+    .dashboard h2 {
+        font-size: 2rem; 
+        text-align: center; 
+    }
+
+    .dashboard p {
+        font-size: 1.5rem; 
+        margin: 0;
+        text-align: center; 
+    }
+    .main {
+        padding: 10px;
+    }
+
+} 

@@ -1,8 +1,9 @@
 a{  
      color: #fcffcd;
-    font-size: 1.5rem;
+    font-size: 1.1em;
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
     text-transform: uppercase;
 }
 .navbar a:hover {
@@ -50,13 +51,22 @@ a{
     background-color: #FFBF00;
   }
  
-  @media only screen and (max-width: 414px) {
+
+  @media only screen and (max-width: 480px) {
     .navbarul {
-      padding-left: 0px;
+      padding-left: 15px;
     }
     .navbar li {
       font-size: 15px;
+      text-align: left;
     }
+    .navbar{
+      font-size: 15px;
+    }
+    .navbar button{
+      padding: 10px 16px;
+    }
+  
   }
 
   

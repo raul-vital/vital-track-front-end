@@ -14,13 +14,16 @@
 }
 
 .cardLi{
-    width: 400px;
+    width: 370px;
     display: inline-block;
-    border-radius: 20px;
-    background: #FFBF00;
+    border-radius: 232px;
+    background: #F4BB44;
     position: relative;
     padding: 10px 60px 30px 60px;
     justify-content: center;
+}
+.cardLi:hover{
+    color:white;
 }
 .container p{
     font-size: 20px;
@@ -28,15 +31,28 @@
     font-family: 'Times New Roman', Times, serif;
 }
 .container h2{
-    font-size: 15px;
+    font-size: 16px;
     font-style: italic;
 
 }
 .container h3{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:black;
-    font-size: 27px;
+    font-size: 30px;
+}
+.noWorkout{
+     align-items: center;
+     color:#ddd
+}
+.addNewBtn{
+
+    font-size: 15px;
+    background-color: #F4BB44;
 }
 
+.link{
+    color: black;
+}
 @media (max-width: 480px) { 
     .cardDiv {
         grid-template-columns: 1fr;
@@ -50,14 +66,16 @@
     }
 
     .container p {
-        font-size: 14px; 
+        font-size: 25px; 
     }
 
     .container h3 {
-        font-size: 18px; 
+        font-size: 40px; 
     }
-
+    .container h2{
+        font-size: 22px
+    }
     .container {
-        font-size: small;
+        font-size: medium;
     }
 }

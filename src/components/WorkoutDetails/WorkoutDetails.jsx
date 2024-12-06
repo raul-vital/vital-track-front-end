@@ -31,7 +31,7 @@ const WorkoutDetails = (props) => {
         <h3>{workout.title}</h3>
         <div className={styles.primaryDiv}>
         <section>
-            <p>{new Date(workout.createdAt).toLocaleDateString()}</p>
+            <h5 className={styles.date}>{new Date(workout.createdAt).toLocaleDateString()}</h5>
             <hr></hr>
             <h4>Category:</h4>
             <p>{workout.category}</p>
