@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import * as workoutService from '../../services/workoutService'
+import styles from './ProgressForm.module.css'
 
 const ProgressForm = ({ workout, handleAddProgress}) => {
     const [formData, setFormData] = useState({
@@ -23,16 +24,19 @@ const ProgressForm = ({ workout, handleAddProgress}) => {
     }
 
     return(
-        <>
+        
+        <main className={styles.container}>
         <section>
-        <div>
-            {console.log(workout.progress)}
-             {!workout.progress.length && <p>There isn't any progress saved.</p>}
+        <div className={styles.cardDiv}>
+             {!workout.progress.length && <p className={styles.noProgress}>There isn't any progress saved.</p>}
             {workout.progress.map((progressData)=> (
-                <div key={progressData._id}>
-                    <p>Date: {progressData.date}</p>
-                    <p>Weights Lifted: {progressData.weightsLifted}</p>
-                    <p>Notes: {progressData.notes || 'No notes provided.'}</p>
+                <div className={styles.cardLi} key={progressData._id}>
+                    <h3>Date:</h3>
+                    <p>{progressData.date}</p>
+                    <h3>Weights Lifted:</h3>
+                    <p>{progressData.weightsLifted} Lb(s).</p>
+                    <h3>Notes:</h3>
+                    <p>{progressData.notes || 'No notes provided.'}</p>
                 </div>
             ))}
 
@@ -41,10 +45,12 @@ const ProgressForm = ({ workout, handleAddProgress}) => {
         </section>
         <section>
          <div>
+        <hr></hr>
+         <h1>Add Progress</h1>
         <form onSubmit={handleSubmit}>
-        
         <label htmlFor='date'> Date: </label>
         <input
+          required
           type="text"
           name="date"
           id="date"
@@ -62,18 +68,23 @@ const ProgressForm = ({ workout, handleAddProgress}) => {
           onChange={handleChange}
         />
          <label htmlFor='notes'> Notes: </label>
-        <textarea
+        <textarea 
           type="text"
           name="notes"
           id="notes"
           value={formData.notes}
           onChange={handleChange}
         />
-        <button type="submit">Submit</button>
+        <button className={styles.submitBtn} type="submit">Submit</button>
+        
         </form>
         </div>
+        <footer></footer>
         </section>
-        </>
+
+        </main>
+
+        
     )
 
 }

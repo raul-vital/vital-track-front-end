@@ -1,0 +1,74 @@
+.container{ 
+    font-size: large;
+    color:#FFBF00
+}
+.cardDiv{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 80px;
+    margin: 80PX AUTO;
+    max-width: 1200px;
+}
+
+.cardLi{
+
+    display: inline-block;
+    border-radius: 20px;
+    background: #FFBF00;
+    position: relative;
+    padding: 10px 60px 30px 60px;
+    justify-content: center;
+}
+
+.container h3{
+    color: white;
+    font-weight: bolder;
+    align-items: flex-start;
+    font-size: 20px;
+    display: flex;
+    justify-content: baseline;
+}
+
+.container p{
+    color: black;
+    font-style: italic;
+    font-size: 10px;
+    display: flex;
+    align-items: end;
+}
+.noProgress p{
+    display: flex;
+    font-size: 10px;
+    color:#FFBF00;
+}
+.container h1{
+    font-size: 25px;
+    font-weight: light;
+}
+
+.container textarea{
+    width: 500px;
+    height: 100px;
+
+}
+
+.container button:hover{
+    cursor: pointer;
+    background-color: #FFBF00;
+}
+
+.container form{
+        width: 650px;
+        margin: 0 auto;
+        padding: 60px;
+        box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        background: #0C2340;
+
+}
+
+.container footer{
+    
+   padding: 20px;
+}
