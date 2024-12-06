@@ -18,9 +18,8 @@
 * [Cors](https://www.npmjs.com/package/cors)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
 * [Bcrypt](https://www.npmjs.com/package/bcrypt)
-* [Dumbbells](https://www.pngegg.com/en/png-zhbmf)
 * [Background .SVG](https://app.haikei.app/)
-* [Dumbells Favicon PNG](https://favicon.io/emoji-favicons/pie/)
+* [Dumbells Favicon PNG](https://www.flaticon.com/free-icon/dumbbells_2446353?term=dumbbell&page=1&position=9&origin=tag&related_id=2446353)
 * [Reshot - Fitness Addiction](https://www.reshot.com/preview-assets/icons/X8C6QH4KPA/fitness-addiction-X8C6QH4KPA.svg)
 
 ### Technologies Used
