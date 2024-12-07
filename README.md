@@ -9,6 +9,7 @@ Vital Track is a fitness tracker/exercise logger application designed to help us
 ### Getting Started 
 * [Vital Track - A Workout Manager](https://vitaltrack.netlify.app/)
 * [Planning Materials](https://trello.com/b/HQf7JyMi/vital-track)
+* [Back-end Repo](https://github.com/raul-vital/vital-track-back-end)
 
 ### Attributions
 * [React](https://react.dev/)
