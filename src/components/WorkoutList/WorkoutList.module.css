@@ -1,4 +1,6 @@
 .container{
+    margin: 0 auto;
+    display: flex;
     font-size: medium;
     color: black
 }
@@ -19,7 +21,7 @@
     border-radius: 232px;
     background: #F4BB44;
     position: relative;
-    padding: 10px 60px 30px 60px;
+    padding: 0 20px 30px 20px;
     justify-content: center;
 }
 .cardLi:hover{

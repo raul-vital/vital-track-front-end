@@ -1,13 +1,13 @@
 # Vital Track
 ![Vital Track Homepage](https://i.imgur.com/VUti8c8.png)
-![Vital Track Workouts](https://i.imgur.com/iywuyUd.png)
+![Vital Track Exercises](https://i.imgur.com/iywuyUd.png)
 
-### Vital Track - A Workout Manager
+### Vital Track - An Exercise Manager
 Vital Track is a fitness tracker/exercise logger application designed to help users monitor and improve their workout routines. It enables users to create an account, log in securely, and manage their workouts. Each workout can include details such as exercise title, sets, reps, weights, and category. Users can also track their progress by logging details for each exercise, including the date, weights lifted, and personal notes.
 
 
 ### Getting Started 
-* [Vital Track - A Workout Manager](https://vitaltrack.netlify.app/)
+* [Vital Track - An Exercise Manager](https://vitaltrack.netlify.app/)
 * [Planning Materials](https://trello.com/b/HQf7JyMi/vital-track)
 * [Back-end Repo](https://github.com/raul-vital/vital-track-back-end)
 
